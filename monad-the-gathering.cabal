@@ -1,0 +1,88 @@
+cabal-version:       2.0
+name:                monad-the-gathering
+version:             0.0.0
+synopsis:            MTG stuff
+description:         MTG stuff
+homepage:            https://github.com/PPKFS/monad-the-gathering
+bug-reports:         https://github.com/PPKFS/monad-the-gathering/issues
+license:             MIT
+license-file:        LICENSE
+author:              PPK
+maintainer:          thecommunistduck@hotmail.co.uk
+copyright:           2020 PPK
+category:            Game Utility
+build-type:          Simple
+extra-doc-files:     README.md
+                   , CHANGELOG.md
+tested-with:         GHC == 8.6.4
+
+source-repository head
+  type:                git
+  location:            https://github.com/PPKFS/monad-the-gathering.git
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     MonadTheGathering
+                       Prelude
+
+  build-depends:       base-noprelude ^>= 4.12.0.0
+                     , relude
+
+  ghc-options:         -Wall
+                       -Wincomplete-uni-patterns
+                       -Wincomplete-record-updates
+                       -Wcompat
+                       -Widentities
+                       -Wredundant-constraints
+                       -fhide-source-paths
+                       -Wmissing-export-lists
+                       -Wpartial-fields
+
+  default-language:    Haskell2010
+
+executable monad-the-gathering
+  hs-source-dirs:      app
+  main-is:             Main.hs
+
+  build-depends:       base-noprelude ^>= 4.12.0.0
+                     , monad-the-gathering
+                     , relude
+
+  ghc-options:         -Wall
+                       -threaded
+                       -rtsopts
+                       -with-rtsopts=-N
+                       -Wincomplete-uni-patterns
+                       -Wincomplete-record-updates
+                       -Wcompat
+                       -Widentities
+                       -Wredundant-constraints
+                       -fhide-source-paths
+                       -Wmissing-export-lists
+                       -Wpartial-fields
+
+  default-language:    Haskell2010
+
+test-suite monad-the-gathering-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+
+  build-depends:       base-noprelude ^>= 4.12.0.0
+                     , monad-the-gathering
+                     , relude
+
+  ghc-options:         -Wall
+                       -threaded
+                       -rtsopts
+                       -with-rtsopts=-N
+                       -Wincomplete-uni-patterns
+                       -Wincomplete-record-updates
+                       -Wcompat
+                       -Widentities
+                       -Wredundant-constraints
+                       -fhide-source-paths
+                       -Wmissing-export-lists
+                       -Wpartial-fields
+
+  default-language:    Haskell2010
